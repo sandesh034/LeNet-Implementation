@@ -9,12 +9,10 @@ A complete implementation of LeNet-5 Convolutional Neural Network using PyTorch,
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Dataset Information](#dataset-information)
-- [Usage](#usage)
 - [Results](#results)
 - [Model Architecture Details](#model-architecture-details)
 - [Training Details](#training-details)
 - [References](#references)
-- [License](#license)
 
 ## 📖 Overview
 
@@ -63,7 +61,7 @@ cd LeNet-Implementation
 2. Install required packages:
 
 ```bash
-pip install torch torchvision matplotlib torchinfo numpy jupyter
+pip install -r requirements.txt
 ```
 
 3. Launch Jupyter Notebook:
@@ -91,35 +89,6 @@ jupyter notebook lenet.ipynb
 - **Format**: Grayscale
 - **Note**: Labels are converted from 1-26 to 0-25 for compatibility
 
-## 💻 Usage
-
-### Running the Complete Pipeline
-
-1. **Load and Explore Data**:
-
-   - The notebook automatically downloads MNIST and EMNIST datasets
-   - Visualizes sample images with labels
-   - Shows dataset statistics
-
-2. **Train on MNIST**:
-
-   ```python
-   # Model initialization
-   model = Lenet(num_classes=10).to(device)
-
-   # Training configuration
-   epochs = 20
-   learning_rate = 0.001
-   criterion = torch.nn.CrossEntropyLoss()
-   optimizer = torch.optim.SGD(params=model.parameters(), lr=learning_rate)
-   ```
-
-3. **Train on EMNIST Letters**:
-   ```python
-   # Model initialization for letters
-   model = Lenet(num_classes=26).to(device)
-   ```
-
 ### Key Features
 
 - **GPU Support**: Automatically detects and uses CUDA if available
@@ -133,13 +102,13 @@ jupyter notebook lenet.ipynb
 
 - **Training**: 20 epochs
 - **Optimizer**: SGD with learning rate 0.001
-- **Expected Accuracy**: ~98-99%
+- **Expected Accuracy**: ~88-92%
 
 ### EMNIST Letters Performance
 
 - **Training**: 20 epochs
 - **Optimizer**: SGD with learning rate 0.001
-- **Expected Accuracy**: ~85-90%
+- **Expected Accuracy**: ~60-80%
 
 ## 🔍 Model Architecture Details
 
@@ -189,11 +158,11 @@ class Lenet(nn.Module):
 
 ## 📚 References
 
-1. **Original Paper**: LeCun, Y., Bottou, L., Bengio, Y., & Haffner, P. (1998). Gradient-based learning applied to document recognition. _Proceedings of the IEEE_, 86(11), 2278-2324. [PDF](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)
+1. **Original Paper**: LeCun, Y., Bottou, L., Bengio, Y., & Haffner, P. (1998). Gradient-based learning applied to document recognition. _Proceedings of the IEEE_, 86(11), 2278-2324. [PDF](http://vision.stanford.edu/cs598_spring07/papers/Lecun98.pdf)
 
 2. **Datasets**:
 
-   - [MNIST Database](http://yann.lecun.com/exdb/mnist/)
+   - [MNIST Database](https://www.kaggle.com/datasets/hojjatk/mnist-dataset)
    - [EMNIST Dataset](https://www.nist.gov/itl/products-and-services/emnist-dataset)
 
 3. **PyTorch Documentation**:
@@ -216,21 +185,11 @@ LeNet/
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - Yann LeCun and colleagues for the original LeNet-5 architecture
 - PyTorch team for the excellent deep learning framework
 - NIST for providing the EMNIST dataset
-
-## 📞 Contact
-
-- **Author**: [Sandesh Dhital]
-- **Email**: [dhitalsandesh1@gmail.com]
-- **GitHub**: [@sandesh034](https://github.com/your-username)
 
 ---
 
